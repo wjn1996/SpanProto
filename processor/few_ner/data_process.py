@@ -630,6 +630,7 @@ class FewNERDProcessor(FewShotProcessor):
             print("[development dataset] all_metrics=", all_metrics)
         else:
             # print("[testing dataset] all_metrics=", all_metrics)
+            print("**** Testing Result ****")
             for key, value in all_metrics.items():
                 print("{}:".format(key), value)
         return all_metrics
@@ -1167,6 +1168,7 @@ class CrossNERProcessor(FewShotProcessor):
             print("[development dataset] all_metrics=", all_metrics)
         else:
             # print("[testing dataset] all_metrics=", all_metrics)
+            print("**** Testing Result ****")
             for key, value in all_metrics.items():
                 print("{}:".format(key), value)
         return all_metrics
