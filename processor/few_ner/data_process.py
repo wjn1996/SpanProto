@@ -626,7 +626,12 @@ class FewNERDProcessor(FewShotProcessor):
             span_precision, span_recall, span_f1
         all_metrics['class_precision'], all_metrics['class_recall'], all_metrics['eval_class_f1'] = \
             class_precision, class_recall, class_f1
-        print("all_metrics=", all_metrics)
+        if stage == "dev":
+            print("[development dataset] all_metrics=", all_metrics)
+        else:
+            # print("[testing dataset] all_metrics=", all_metrics)
+            for key, value in all_metrics.items():
+                print("{}:".format(key), value)
         return all_metrics
 
     def metrics_by_entity(self, label_class_span, pred_class_span):
@@ -1158,7 +1163,12 @@ class CrossNERProcessor(FewShotProcessor):
             span_precision, span_recall, span_f1
         all_metrics['class_precision'], all_metrics['class_recall'], all_metrics['eval_class_f1'] = \
             class_precision, class_recall, class_f1
-        print("{} all_metrics=".format(stage), all_metrics)
+        if stage == "dev":
+            print("[development dataset] all_metrics=", all_metrics)
+        else:
+            # print("[testing dataset] all_metrics=", all_metrics)
+            for key, value in all_metrics.items():
+                print("{}:".format(key), value)
         return all_metrics
 
     def metrics_by_entity(self, label_class_span, pred_class_span):
