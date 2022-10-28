@@ -1,5 +1,6 @@
-## SpanProto：Few-shot NER
-This project is implemented for the EMNLP2022 (main conference) paper: "[SpanProto: A Two-stage Span-based Prototypical Network for Few-shot Named Entity Recognition](https://arxiv.org/pdf/2210.09049.pdf)". Our code is based on pytorch and huggingface transformers.
+## SpanProto：A Two-stage Span-based Prototypical Network for Few-shot Named Entity Recognition
+
+This project is implemented for the **EMNLP2022 (main conference)** paper: "[SpanProto: A Two-stage Span-based Prototypical Network for Few-shot Named Entity Recognition](https://arxiv.org/pdf/2210.09049.pdf)". Our code is based on pytorch and huggingface transformers.
 
 > Ps: This project is also committed at Alibaba [EasyNLP](https://github.com/alibaba/EasyNLP). We will very HAPPY if you star and fork our projects!
 
@@ -10,7 +11,7 @@ The main motivations are:
 - In few-shot NER, there are only k-shot entities of each class, but has many non-entity tokens (i.e., tagging "O") which may disturb the performance.
 
 The main methods:
-- We decompose the few-shot NER into two stages, including span extractor and mention classifier. 
+- We decompose the few-shot NER into two stages, including span extraction and mention classifying. 
 - In the span extractor, we convert the original sequentail tagging into a matrix, where each element stands for one span (start and end position) and 1 means this span is an entity and 0 means not. We can train the span extractor via cross-entropy on support set, and recall all candidate spans on query set by model inference.
 - In the mention classifier, we capture each span representations and train the model with protopical learning on support set. When inference on query set, we split out false negative spans via margin-based loss, and predict others class by calculating and sorting the distance between each span embeddings and prototype vectors.
 
@@ -39,7 +40,12 @@ In this script, you can define the following values:
 ---
 
 ## Acknowledgement
-This project is support by Alibaba Platform of AI (PAI).
+This work has been supported by the National Natural Science Foundation of China, 
+Alibaba Group through the Alibaba Innovation Research Program, 
+the National Natural Science Foundation of China,
+the Research Project of Shanghai Science and Technology Commission and The Fundamental Research Funds for the Central Universities.
+
+## Citation
 
 ```
 @article{DBLP:journals/corr/abs-2210-09049,
