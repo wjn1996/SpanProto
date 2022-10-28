@@ -1,6 +1,8 @@
 ## SpanProto：Few-shot NER
 This project is implemented for the EMNLP2022 (main conference) paper: "[SpanProto: A Two-stage Span-based Prototypical Network for Few-shot Named Entity Recognition](https://arxiv.org/pdf/2210.09049.pdf)". Our code is based on pytorch and huggingface transformers.
 
+> Ps: This project is also committed at Alibaba [EasyNLP](https://github.com/alibaba/EasyNLP). We will very HAPPY if you star and fork our projects!
+
 In this paper, we present a novel two-stage span-based prototypical network (SpanProto) for few-shot named entity recognition (NER). 
 
 The main motivations are:
